@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "a0c2f91b-6f3c-4971-a76a-1749f6737354",
+		"name": "FormStack QA",
+		"description": "Requirements\n1. You must create a Formstack account (trial) if you haven’t already\n2. You must create an API Application at our developers center\na. https://www.formstack.com/admin/apiKey/main\n3. You must test the following API methods (all found under ‘Forms’):\n\ta. Get all forms on the account\n\tb. Get a specific form on the account\n\tc. Copy a form\n\td. Delete the copied form\n4. You can write your own tool using the Formstack API or use an existing tool\n5. You must record the following for each test:\na. Request URL & query string\nb. Response Code\nc. Response (JSON)\n6. You must write a test plan / test case for the tests to be ran.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Forms For Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bfc9bbad-69fc-44dc-bc2a-cc1ca89207bc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.environment.set(\"id\", jsonData.forms[0].id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://www.formstack.com/api/v2/form.json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"form.json"
+					]
+				},
+				"description": "Get all forms for an account via API using OAuth 2.0 token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Form From Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ae09140-1572-4797-87bb-4278a7a31402",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://www.formstack.com/api/v2/form/:Id/.json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"form",
+						":Id",
+						".json"
+					],
+					"variable": [
+						{
+							"key": "Id",
+							"value": "{{id}}"
+						}
+					]
+				},
+				"description": "using form id param and OAuth token"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Copy of an Accounts Form",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "653c4f74-eb6c-4303-8103-eee558137392",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"pm.environment.set(\"id\", jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://www.formstack.com/api/v2/form/:id/copy.json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"form",
+						":id",
+						"copy.json"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{id}}"
+						}
+					]
+				},
+				"description": "copy a form using param \"id\" and OAuth 2.0 token"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Specific Form From Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e900617-59e7-4176-baee-a7e968b99964",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://www.formstack.com/api/v2/form/:id/.json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"form",
+						":id",
+						".json"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "923ad82e-293d-405d-8251-2d9abf65661a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "70191be5-1a54-4319-a9cb-9aff96ca7ad3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "53a0999c-1a83-4526-a3b5-a56b91dccc75",
+			"key": "oauth_token",
+			"value": "5ac525956db34942426dc4f76a56720a",
+			"type": "string"
+		}
+	]
+}
