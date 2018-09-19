@@ -1,0 +1,318 @@
+{
+	"id": "80a220f1-dae8-4a88-a7dd-206059eadf74",
+	"name": "FormStack QA",
+	"allTests": [],
+	"timestamp": "2018-09-19T14:14:16.913Z",
+	"collection_id": "a0c2f91b-6f3c-4971-a76a-1749f6737354",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "09cb6fe0-9581-415d-a765-9aacb6ac851d",
+	"data": [],
+	"delay": 500,
+	"count": 3,
+	"collection": {
+		"id": "a0c2f91b-6f3c-4971-a76a-1749f6737354",
+		"name": "FormStack QA",
+		"description": "Requirements\n1. You must create a Formstack account (trial) if you haven’t already\n2. You must create an API Application at our developers center\na. https://www.formstack.com/admin/apiKey/main\n3. You must test the following API methods (all found under ‘Forms’):\n\ta. Get all forms on the account\n\tb. Get a specific form on the account\n\tc. Copy a form\n\td. Delete the copied form\n4. You can write your own tool using the Formstack API or use an existing tool\n5. You must record the following for each test:\na. Request URL & query string\nb. Response Code\nc. Response (JSON)\n6. You must write a test plan / test case for the tests to be ran.",
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "923ad82e-293d-405d-8251-2d9abf65661a",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "70191be5-1a54-4319-a9cb-9aff96ca7ad3",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			}
+		],
+		"variables": [
+			{
+				"key": "oauth_token",
+				"value": "5ac525956db34942426dc4f76a56720a",
+				"description": "",
+				"enabled": true
+			}
+		],
+		"order": [
+			"76162476-28f2-4a67-84e0-049bc71d397f",
+			"dd868db0-3468-485b-b0bc-7104a7b771fc",
+			"24f470fd-209d-40ca-bdf7-f3b99adc2746",
+			"8a7e0a07-9649-485a-ae54-b9b02d8e9fe6"
+		],
+		"folders_order": [],
+		"owner": "5390208",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Get All Forms For Account",
+			"id": "76162476-28f2-4a67-84e0-049bc71d397f",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"803",
+				"561",
+				"631"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "631",
+			"totalRequestTime": 1995,
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Specific Form From Account",
+			"id": "dd868db0-3468-485b-b0bc-7104a7b771fc",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"167",
+				"126",
+				"116"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "116",
+			"totalRequestTime": 409,
+			"iterationResults": {}
+		},
+		{
+			"name": "Create a Copy of an Accounts Form",
+			"id": "24f470fd-209d-40ca-bdf7-f3b99adc2746",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"280",
+				"376",
+				"328"
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				},
+				{
+					"Status code is 201": true
+				},
+				{
+					"Status code is 201": true
+				}
+			],
+			"time": "328",
+			"totalRequestTime": 984,
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete a Specific Form From Account",
+			"id": "8a7e0a07-9649-485a-ae54-b9b02d8e9fe6",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"81",
+				"130",
+				"78"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "78",
+			"totalRequestTime": 289,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 12,
+	"totalFail": 0,
+	"totalTime": 3677,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Get All Forms For Account",
+			"id": "76162476-28f2-4a67-84e0-049bc71d397f",
+			"url": "https://www.formstack.com/api/v2/form.json",
+			"time": "631",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Specific Form From Account",
+			"id": "dd868db0-3468-485b-b0bc-7104a7b771fc",
+			"url": "https://www.formstack.com/api/v2/form/3197239/.json",
+			"time": "116",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Create a Copy of an Accounts Form",
+			"id": "24f470fd-209d-40ca-bdf7-f3b99adc2746",
+			"url": "https://www.formstack.com/api/v2/form/3197239/copy.json",
+			"time": "328",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete a Specific Form From Account",
+			"id": "8a7e0a07-9649-485a-ae54-b9b02d8e9fe6",
+			"url": "https://www.formstack.com/api/v2/form/3198685/.json",
+			"time": "78",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
